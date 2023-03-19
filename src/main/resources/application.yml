@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/story_web
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      dialect: org.hibernate.dialect.MySQL8Dialect
+server:
+  port: 8080
+
+servlet:
+  multipart:
+    max-file-size: 10MB
+    # dung lượng tối đa của request(tham số) mà người dùng truyền lên
+    max-request-size: 10MB
+
+jwt:
+  privateKey: tidOUsb16utzkjLEQMRkLNtobZw0mJRhXjEHrCBikMY=
+
+upload:
+  path: C:\Users\admin\Desktop\HocJava\ThucHanhCuoiKhoa\Image
