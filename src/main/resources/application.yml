@@ -5,6 +5,11 @@ spring:
     password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
 
+  social:
+    facebook:
+      appId: 6157598857634895
+      appSecret: 2277da0e8e8919c105816f400530052c
+
   jpa:
     show-sql: true
     hibernate:
