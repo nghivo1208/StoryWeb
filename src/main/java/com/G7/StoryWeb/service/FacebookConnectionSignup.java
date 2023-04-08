@@ -7,6 +7,8 @@ import org.springframework.social.connect.Connection;
 import org.springframework.social.connect.ConnectionSignUp;
 import org.springframework.stereotype.Service;
 
+
+//Dang ki
 @Service
 public class FacebookConnectionSignup  implements ConnectionSignUp {
     @Autowired

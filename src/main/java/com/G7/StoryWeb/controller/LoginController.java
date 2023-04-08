@@ -38,6 +38,7 @@ public class LoginController {
 //        SecretKey key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
 //        String jwtKey = Encoders.BASE64.encode(key.getEncoded());
 //        System.out.println("SecretKey : "+jwtKey);
+
         ResponseData responseData = new ResponseData();
         responseData.setData(jwtUtilsHelpers.ganerateToken());
 

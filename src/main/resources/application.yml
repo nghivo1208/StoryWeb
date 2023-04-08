@@ -16,14 +16,16 @@ spring:
       ddl-auto: none
     properties:
       dialect: org.hibernate.dialect.MySQL8Dialect
+
+  servlet:
+    multipart:
+      max-file-size: 20MB
+          # dung lượng tối đa của request(tham số) mà người dùng truyền lên
+      max-request-size: 20MB
+
 server:
   port: 8080
 
-servlet:
-  multipart:
-    max-file-size: 10MB
-    # dung lượng tối đa của request(tham số) mà người dùng truyền lên
-    max-request-size: 10MB
 
 jwt:
   privateKey: tidOUsb16utzkjLEQMRkLNtobZw0mJRhXjEHrCBikMY=

@@ -56,23 +56,28 @@ public class CustomConfigSecurity {
                 .authorizeRequests()
                 .antMatchers("/loginBasic/**")
                 .permitAll()
-                .antMatchers("/login*", "/signin/**", "/signup/**")
+                .antMatchers("/login/**", "/signin/**", "/signup/**")
+                .permitAll()
+
+                .antMatchers("/Literaries/**")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
-                .and()
+
+
+                /*.and()
                 .formLogin()
                 .loginPage("/login")
                 .permitAll()
                 .and()
-                .logout();
+                .logout();*/
 
 //                .anyRequest()
 //                .authenticated()
 //                .and()
 //                .httpBasic();
         ;
-        http.addFilterBefore(customFilterJwt, UsernamePasswordAuthenticationFilter.class);
+//        http.addFilterBefore(customFilterJwt, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }

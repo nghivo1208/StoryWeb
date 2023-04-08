@@ -15,18 +15,14 @@ public class Literaries {
     @Column(name = "age")
     private int age;
 
-    @Column(name = "isPlus")
-    private boolean isPlus;
+    @Column(name = "is_Plus")
+    private int isPlus;
 
     @Column(name = "date_submitted")
     private long dateSubmitted;
 
     @Column(name = "summary")
     private String summary;
-
-    @ManyToOne
-    @JoinColumn(name = "chapter_id")
-    private Chapters chapters;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
@@ -69,13 +65,6 @@ public class Literaries {
         this.age = age;
     }
 
-    public boolean isPlus() {
-        return isPlus;
-    }
-
-    public void setPlus(boolean plus) {
-        isPlus = plus;
-    }
 
     public long getDateSubmitted() {
         return dateSubmitted;
@@ -91,14 +80,6 @@ public class Literaries {
 
     public void setSummary(String summary) {
         this.summary = summary;
-    }
-
-    public Chapters getChapters() {
-        return chapters;
-    }
-
-    public void setChapters(Chapters chapters) {
-        this.chapters = chapters;
     }
 
     public Categories getCategories() {
@@ -139,5 +120,13 @@ public class Literaries {
 
     public void setListInteraction(Set<Interactions> listInteraction) {
         this.listInteraction = listInteraction;
+    }
+
+    public int isPlus() {
+        return isPlus;
+    }
+
+    public void setPlus(int plus) {
+        isPlus = plus;
     }
 }
