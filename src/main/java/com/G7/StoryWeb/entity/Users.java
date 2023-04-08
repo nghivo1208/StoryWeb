@@ -1,8 +1,6 @@
 package com.G7.StoryWeb.entity;
 
 import javax.persistence.*;
-
-import javax.persistence.Entity;
 import java.util.Set;
 
 @Entity(name = "users")
@@ -21,7 +19,8 @@ public class Users {
     private String fullname;
 
     @Column(name = "login_id")
-    private int login_id;
+    private String login_id;
+
 
     @Column(name = "id_number")
     private int id_number;
@@ -104,11 +103,12 @@ public class Users {
         this.fullname = fullname;
     }
 
-    public int getLogin_id() {
+    public String getLogin_id() {
         return login_id;
     }
 
-    public void setLogin_id(int login_id) {
+    public void setLogin_id(String login_id) {
+
         this.login_id = login_id;
     }
 

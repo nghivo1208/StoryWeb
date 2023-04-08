@@ -21,8 +21,10 @@ public class Chapters {
     @Column(name = "content_url")
     private String contentUrl;
 
-    @OneToMany(mappedBy = "chapters")
-    private Set<Literaries> listLiteraries;
+
+//    @OneToMany(mappedBy = "chapters")
+//    private Set<Literaries> listLiteraries;
+
 
     public int getId() {
         return id;
@@ -64,6 +66,7 @@ public class Chapters {
         this.contentUrl = contentUrl;
     }
 
+<<<<<<< HEAD
     public Set<Literaries> getListLiteraries() {
         return listLiteraries;
     }
@@ -71,4 +74,13 @@ public class Chapters {
     public void setListLiteraries(Set<Literaries> listLiteraries) {
         this.listLiteraries = listLiteraries;
     }
+=======
+//    public Set<Literaries> getListLiteraries() {
+//        return listLiteraries;
+//    }
+//
+//    public void setListLiteraries(Set<Literaries> listLiteraries) {
+//        this.listLiteraries = listLiteraries;
+//    }
+>>>>>>> master
 }
