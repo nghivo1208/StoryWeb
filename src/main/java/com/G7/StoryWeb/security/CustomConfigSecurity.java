@@ -54,6 +54,7 @@ public class CustomConfigSecurity {
 
                 .antMatchers("/Literaries/**")
                 .permitAll()
+
                 .anyRequest()
                 .authenticated()
 

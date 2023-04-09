@@ -18,7 +18,6 @@ public class Literaries {
     @Column(name = "is_Plus")
     private int isPlus;
 
-
     @Column(name = "date_submitted")
     private long dateSubmitted;
 
@@ -26,7 +25,6 @@ public class Literaries {
     private String summary;
 
     @ManyToOne
-
     @JoinColumn(name = "category_id")
     private Categories categories;
 
@@ -42,6 +40,9 @@ public class Literaries {
 
     @OneToMany(mappedBy = "literaries")
     private Set<Interactions> listInteraction;
+
+    @OneToMany(mappedBy = "literaries")
+    private Set<Chapters> listChapter;
 
     public int getId() {
         return id;
@@ -123,11 +124,19 @@ public class Literaries {
         this.listInteraction = listInteraction;
     }
 
-    public int isPlus() {
+    public int getIsPlus() {
         return isPlus;
     }
 
-    public void setPlus(int plus) {
-        isPlus = plus;
+    public void setIsPlus(int isPlus) {
+        this.isPlus = isPlus;
+    }
+
+    public Set<Chapters> getListChapter() {
+        return listChapter;
+    }
+
+    public void setListChapter(Set<Chapters> listChapter) {
+        this.listChapter = listChapter;
     }
 }

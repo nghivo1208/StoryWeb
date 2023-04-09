@@ -11,13 +11,11 @@ spring:
     properties:
       dialect: org.hibernate.dialect.MySQL8Dialect
 
-
-servlet:
-  multipart:
-    max-file-size: 10MB
-    # dung lượng tối đa của request(tham số) mà người dùng truyền lên
-    max-request-size: 10MB
-
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      # dung lượng tối đa của request(tham số) mà người dùng truyền lên
+      max-request-size: 10MB
 
 jwt:
   privateKey: tidOUsb16utzkjLEQMRkLNtobZw0mJRhXjEHrCBikMY=

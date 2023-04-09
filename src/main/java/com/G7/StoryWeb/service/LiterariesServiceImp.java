@@ -5,6 +5,8 @@ import com.G7.StoryWeb.repository.LiterariesRepository;
 import com.G7.StoryWeb.service.imp.LiterariesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -66,6 +68,23 @@ public class LiterariesServiceImp implements LiterariesService {
         }catch (Exception e){
             System.out.println("Lỗi insert literaries: " + e.getMessage());
             return false;
+        }
+    }
+
+    @Override
+    public Resource load(String fileName) {
+        try{
+            init();
+            Path file = root.resolve(fileName);
+            Resource resource = new UrlResource(file.toUri());
+            if (resource.exists() || resource.isReadable()) {
+                return resource;
+            } else {
+                throw new RuntimeException("Could not read the file!");
+            }
+        }catch(Exception e){
+            System.out.println("Error load: " + e.getMessage());
+            return null;
         }
     }
 

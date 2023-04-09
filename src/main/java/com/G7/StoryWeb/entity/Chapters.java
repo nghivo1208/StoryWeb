@@ -21,9 +21,10 @@ public class Chapters {
     @Column(name = "content_url")
     private String contentUrl;
 
+    @ManyToOne
+    @JoinColumn(name = "literaries_id")
+    private Literaries literaries;
 
-//    @OneToMany(mappedBy = "chapters")
-//    private Set<Literaries> listLiteraries;
 
 
     public int getId() {
@@ -66,5 +67,11 @@ public class Chapters {
         this.contentUrl = contentUrl;
     }
 
+    public Literaries getLiteraries() {
+        return literaries;
+    }
 
+    public void setLiteraries(Literaries literaries) {
+        this.literaries = literaries;
+    }
 }
