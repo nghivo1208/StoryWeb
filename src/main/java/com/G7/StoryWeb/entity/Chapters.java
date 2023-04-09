@@ -66,21 +66,5 @@ public class Chapters {
         this.contentUrl = contentUrl;
     }
 
-<<<<<<< HEAD
-    public Set<Literaries> getListLiteraries() {
-        return listLiteraries;
-    }
 
-    public void setListLiteraries(Set<Literaries> listLiteraries) {
-        this.listLiteraries = listLiteraries;
-    }
-=======
-//    public Set<Literaries> getListLiteraries() {
-//        return listLiteraries;
-//    }
-//
-//    public void setListLiteraries(Set<Literaries> listLiteraries) {
-//        this.listLiteraries = listLiteraries;
-//    }
->>>>>>> master
 }

@@ -25,14 +25,7 @@ import org.springframework.social.facebook.connect.FacebookConnectionFactory;
 @EnableWebSecurity
 public class CustomConfigSecurity {
 
-    @Autowired
-    FacebookConnectionSignup facebookConnectionSignup;
 
-    @Value("${spring.social.facebook.appSecret}")
-    String appSecret;
-
-    @Value("${spring.social.facebook.appId}")
-    String appId;
 
     @Autowired
     CustomAuthentication authProvider;
@@ -80,29 +73,6 @@ public class CustomConfigSecurity {
 //        http.addFilterBefore(customFilterJwt, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
-    }
-
-    @Bean
-    public ProviderSignInController providerSignInController() {
-        ConnectionFactoryLocator connectionFactoryLocator =
-                connectionFactoryLocator();
-        UsersConnectionRepository usersConnectionRepository =
-                getUsersConnectionRepository(connectionFactoryLocator);
-        ((InMemoryUsersConnectionRepository) usersConnectionRepository)
-                .setConnectionSignUp(facebookConnectionSignup);
-        return new ProviderSignInController(connectionFactoryLocator,
-                usersConnectionRepository, new FacebookSignInAdapter());
-    }
-
-    private ConnectionFactoryLocator connectionFactoryLocator() {
-        ConnectionFactoryRegistry registry = new ConnectionFactoryRegistry();
-        registry.addConnectionFactory(new FacebookConnectionFactory(appId, appSecret));
-        return registry;
-    }
-
-    private UsersConnectionRepository getUsersConnectionRepository(ConnectionFactoryLocator
-                                                                           connectionFactoryLocator) {
-        return new InMemoryUsersConnectionRepository(connectionFactoryLocator);
     }
 
 

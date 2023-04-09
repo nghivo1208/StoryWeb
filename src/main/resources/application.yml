@@ -4,42 +4,20 @@ spring:
     username: root
     password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
-
-<<<<<<< HEAD
-=======
-  social:
-    facebook:
-      appId: 6157598857634895
-      appSecret: 2277da0e8e8919c105816f400530052c
-
->>>>>>> master
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: none
     properties:
       dialect: org.hibernate.dialect.MySQL8Dialect
-<<<<<<< HEAD
-server:
-  port: 8080
+
 
 servlet:
   multipart:
     max-file-size: 10MB
     # dung lượng tối đa của request(tham số) mà người dùng truyền lên
     max-request-size: 10MB
-=======
 
-  servlet:
-    multipart:
-      max-file-size: 20MB
-          # dung lượng tối đa của request(tham số) mà người dùng truyền lên
-      max-request-size: 20MB
-
-server:
-  port: 8080
-
->>>>>>> master
 
 jwt:
   privateKey: tidOUsb16utzkjLEQMRkLNtobZw0mJRhXjEHrCBikMY=
